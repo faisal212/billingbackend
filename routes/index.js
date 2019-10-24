@@ -7,7 +7,7 @@ router.get('/',async function(req, res, next) {
  try {
  const result = await fetch('https://portal.onairtel.com/xmlapi/xmlapi', {
     method: 'POST',
-    headers:  {  'Content-Type': 'text/xml'    } ,
+    headers:  {  'Content-Type': 'application/x-www-form-urlencoded'    } ,
     body: '<?xml version="1.0"?> <methodCall> <methodName>listCustomers</methodName><params><param><value><struct> <member> </member> </struct></value></param> </params> </methodCall>' 
   });
   console.log(result)
@@ -23,3 +23,5 @@ router.get('/',async function(req, res, next) {
 });
 
 module.exports = router;
+
+
