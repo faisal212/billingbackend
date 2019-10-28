@@ -7,7 +7,7 @@ router.get('/', async function (req, res, next) {
 
   try {
     const xml = '<?xml version="1.0"?> <methodCall> <methodName>listCustomers</methodName><params><param><value><struct> <member> </member> </struct></value></param> </params> </methodCall>';
-    const xmlResult = await axios.post("https://www.w3schools.com/xml/cd_catalog.xml",xml,{headers: { 'content-type': 'application/x-www-form-urlencoded' },});
+    const xmlResult = await axios.post("https://portal.onairtel.com/xmlapi/xmlapi",xml,{headers: { 'content-type': 'application/x-www-form-urlencoded' },});
     const result = await xml2js(xmlResult.data);
     
     console.log(JSON.stringify(result));
